@@ -13,6 +13,10 @@
 	-->
 	<link rel="stylesheet" type="text/css" href="/css/vendor/bootstrap.min.css">
 	<link href="/css/vendor/google-material-icons.css" rel="stylesheet">
+	
+	<!-- Syntax Highlighting -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
 	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 		  rel="stylesheet"

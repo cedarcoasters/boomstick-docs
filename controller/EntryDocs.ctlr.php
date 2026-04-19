@@ -9,9 +9,7 @@ class EntryDocs extends Controller
 {
 	public function index()
 	{
-		$lib = new Hello();
-
-		$this->libSaysHello = $lib->hello();
+		$this->currentPage = 'index';
 		$this->bodyView = 'index';
 		$this->render();
 	}
@@ -20,6 +18,20 @@ class EntryDocs extends Controller
 	{
 		$this->bodyView = 'not-found';
 		header("HTTP/1.1 404 Not Found");
+		$this->render();
+	}
+
+	public function entryModule()
+	{
+		$this->currentPage = 'entry-module';
+		$this->bodyView = 'entry-module';
+		$this->render();
+	}
+
+	public function coreLibrary()
+	{
+		$this->currentPage = 'core-library';
+		$this->bodyView = 'core-library';
 		$this->render();
 	}
 }

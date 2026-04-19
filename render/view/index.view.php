@@ -1,23 +1,6 @@
 <?=$this->insertStyle('index');?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-	<div class="container">
-		<a class="navbar-brand" href="#">
-			<span class="material-icons align-middle me-2">rocket_launch</span>
-			<strong>BoomStick</strong> Documentation
-		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav ms-auto">
-				<li class="nav-item"><a class="nav-link" href="#getting-started">Getting Started</a></li>
-				<li class="nav-item"><a class="nav-link" href="#project-structure">Structure</a></li>
-				<li class="nav-item"><a class="nav-link" href="#next-steps">Next Steps</a></li>
-			</ul>
-		</div>
-	</div>
-</nav>
+<?=$this->insertElement('nav');?>
 
 <header class="hero-section text-white text-center py-5">
 	<div class="container">

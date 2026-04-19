@@ -36,6 +36,10 @@ body {
     z-index: 1;
 }
 
+.page-header {
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+}
+
 .section-title {
     font-weight: 600;
     color: #333;
@@ -173,12 +177,59 @@ body {
     color: #0f5132;
 }
 
-.navbar {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+.main-nav {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 0.75rem 0;
 }
 
-.navbar-brand {
-    font-size: 1.25rem;
+.main-nav .navbar-brand {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.main-nav .navbar-brand:hover {
+    color: #667eea;
+}
+
+.main-nav .navbar-brand .material-icons {
+    color: #667eea;
+    font-size: 1.75rem;
+}
+
+.main-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    padding: 0.6rem 1.25rem;
+    margin: 0 0.25rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+}
+
+.main-nav .nav-link:hover {
+    color: #fff;
+    background: rgba(102, 126, 234, 0.2);
+}
+
+.main-nav .nav-link.active {
+    color: #fff;
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.main-nav .nav-link .material-icons {
+    font-size: 1.1rem;
+}
+
+.main-nav .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.main-nav .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 footer {
@@ -187,6 +238,28 @@ footer {
 
 .text-muted {
     color: #6c757d !important;
+}
+
+.sticky-sidebar {
+    position: sticky;
+    top: 80px;
+}
+
+.sticky-sidebar .list-group-item {
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.sticky-sidebar .list-group-item:hover {
+    background: rgba(102, 126, 234, 0.1);
+    border-left-color: var(--gradient-start);
+}
+
+.table code {
+    background: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.875em;
 }
 
 @media (max-width: 768px) {
@@ -204,6 +277,10 @@ footer {
     .code-block {
         font-size: 0.8rem;
         padding: 0.75rem 1rem;
+    }
+    
+    .sticky-sidebar {
+        position: static;
     }
 }
 

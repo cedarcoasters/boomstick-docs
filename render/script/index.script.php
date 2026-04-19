@@ -1,5 +1,10 @@
 <script type="text/javascript">$(function(){
 
+// Initialize syntax highlighting
+if (typeof hljs !== 'undefined') {
+    hljs.highlightAll();
+}
+
 // Copy to clipboard functionality
 $('.copy-btn').on('click', function() {
     var $btn = $(this);
