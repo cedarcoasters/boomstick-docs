@@ -45,4 +45,14 @@ class EntryDocs extends Controller
 		$this->bodyView = 'core-library';
 		$this->render();
 	}
+
+	public function aiTooling()
+	{
+		$this->currentPage = 'ai-tooling';
+		$this->pageTitle = 'AI Tooling Resources';
+		$this->pageDescription = 'Machine-readable index and reference for AI assistants to quickly understand and develop with the BoomStick PHP MVC framework.';
+		$this->pagePath = '/ai-tooling';
+		$this->bodyView = 'ai-tooling';
+		$this->render();
+	}
 }

@@ -21,4 +21,5 @@ $route->register('EntryDocs/entryModule' ,'/entry-module');
 
 $route->register('EntryDocs/coreLibrary' ,'/core-library');
 
+$route->register('EntryDocs/aiTooling' ,'/ai-tooling');
 

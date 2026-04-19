@@ -24,6 +24,11 @@
 						<span class="material-icons align-middle me-1">library_books</span> Core Library
 					</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link <?=$currentPage === 'ai-tooling' ? 'active' : '';?>" href="/ai-tooling">
+						<span class="material-icons align-middle me-1">smart_toy</span> AI Tooling
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
