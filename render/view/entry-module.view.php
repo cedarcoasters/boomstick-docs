@@ -369,10 +369,11 @@ class EntryBang extends Controller
 <footer class="bg-dark text-white py-4 mt-5">
 	<div class="container text-center">
 		<p class="mb-1">
-			<span class="material-icons align-middle me-1">rocket_launch</span>
+			<img src="/images/ash-shotgun.svg" alt="BoomStick" class="footer-logo me-2">
 			<strong>BoomStick Framework</strong>
 		</p>
-		<p class="text-muted small mb-0">A lightweight PHP MVC framework for rapid development</p>
+		<p class="text-muted small mb-2">A lightweight PHP MVC framework for rapid development</p>
+		<p class="footer-quote mb-0"><em>"Groovy."</em> <span class="text-muted small">— Ash Williams</span></p>
 	</div>
 </footer>
 

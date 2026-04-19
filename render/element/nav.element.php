@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg sticky-top main-nav">
 	<div class="container">
-		<a class="navbar-brand" href="/">
-			<span class="material-icons align-middle me-2">rocket_launch</span>
+		<a class="navbar-brand" href="/" title="This is my boomstick!">
+			<img src="/images/ash-shotgun.svg" alt="BoomStick" class="brand-logo me-2">
 			<strong>BoomStick</strong>
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

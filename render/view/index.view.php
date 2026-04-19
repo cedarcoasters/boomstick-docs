@@ -4,11 +4,12 @@
 
 <header class="hero-section text-white text-center py-5">
 	<div class="container">
+		<img src="/images/ash-shotgun.svg" alt="BoomStick" class="hero-logo mb-4">
 		<h1 class="display-4 fw-bold mb-3">
-			<span class="material-icons display-1 d-block mb-3">rocket_launch</span>
-			Welcome to BoomStick
+			This. Is. My. <span class="text-warning">BoomStick.</span>
 		</h1>
 		<p class="lead mb-4">A lightweight PHP MVC framework for rapid web application development</p>
+		<p class="tagline mb-4"><em>"Alright you primitive screwheads, listen up!"</em></p>
 		<a href="#getting-started" class="btn btn-light btn-lg">
 			<span class="material-icons align-middle me-1">play_arrow</span> Get Started
 		</a>
@@ -246,7 +247,7 @@
 								</div>
 								<div class="alert alert-success mt-3 mb-0">
 									<span class="material-icons align-middle me-1">check_circle</span>
-									<strong>Success!</strong> This adds the vendor autoloader include to your entry module's <code>public/index.php</code>. Your BoomStick development environment is now fully configured!
+									<strong>Groovy!</strong> This adds the vendor autoloader include to your entry module's <code>public/index.php</code>. Your BoomStick development environment is now fully configured!
 								</div>
 							</div>
 						</div>
@@ -420,10 +421,11 @@
 <footer class="bg-dark text-white py-4 mt-5">
 	<div class="container text-center">
 		<p class="mb-1">
-			<span class="material-icons align-middle me-1">rocket_launch</span>
+			<img src="/images/ash-shotgun.svg" alt="BoomStick" class="footer-logo me-2">
 			<strong>BoomStick Framework</strong>
 		</p>
-		<p class="text-muted small mb-0">A lightweight PHP MVC framework for rapid development</p>
+		<p class="text-muted small mb-2">A lightweight PHP MVC framework for rapid development</p>
+		<p class="footer-quote mb-0"><em>"Groovy."</em> <span class="text-muted small">— Ash Williams</span></p>
 	</div>
 </footer>
 

@@ -188,15 +188,36 @@ body {
     color: #fff;
     font-weight: 700;
     letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
 }
 
 .main-nav .navbar-brand:hover {
     color: #667eea;
 }
 
-.main-nav .navbar-brand .material-icons {
-    color: #667eea;
-    font-size: 1.75rem;
+.brand-logo {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: filter 0.2s ease;
+}
+
+.main-nav .navbar-brand:hover .brand-logo {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(200deg);
+}
+
+.hero-logo {
+    height: 150px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.footer-logo {
+    height: 24px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    vertical-align: middle;
 }
 
 .main-nav .nav-link {
@@ -232,8 +253,18 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+.tagline {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
 footer {
     margin-top: auto;
+}
+
+.footer-quote {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .text-muted {
