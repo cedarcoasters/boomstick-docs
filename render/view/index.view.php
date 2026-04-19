@@ -137,46 +137,6 @@
 						<div class="d-flex align-items-start">
 							<span class="step-number">6</span>
 							<div class="ms-3 flex-grow-1">
-								<h5 class="card-title">Build and Run with Docker</h5>
-								<p class="card-text text-muted">Use Docker Compose to build the project and start your development environment.</p>
-								<div class="code-block-wrapper">
-									<pre class="code-block"><code>docker compose up --build</code></pre>
-									<button class="copy-btn" title="Copy to clipboard"><span class="material-icons">content_copy</span></button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-12">
-				<div class="card step-card h-100">
-					<div class="card-body">
-						<div class="d-flex align-items-start">
-							<span class="step-number">7</span>
-							<div class="ms-3 flex-grow-1">
-								<h5 class="card-title">View Your Application</h5>
-								<p class="card-text text-muted">Open your web browser and navigate to your local development server.</p>
-								<div class="code-block-wrapper">
-									<pre class="code-block"><code>http://localhost:8000/</code></pre>
-									<button class="copy-btn" title="Copy to clipboard"><span class="material-icons">content_copy</span></button>
-								</div>
-								<div class="alert alert-success mt-3 mb-0">
-									<span class="material-icons align-middle me-1">check_circle</span>
-									<strong>Checkpoint:</strong> You should now see the default BoomStick landing page.
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-12">
-				<div class="card step-card h-100">
-					<div class="card-body">
-						<div class="d-flex align-items-start">
-							<span class="step-number">8</span>
-							<div class="ms-3 flex-grow-1">
 								<h5 class="card-title">Install Development Tools (Node.js Module)</h5>
 								<p class="card-text text-muted">Install the base development tools using the nodejs module. This creates a standalone module that manages npm dependencies and copies the necessary vendor files into your entry module.</p>
 								<div class="code-block-wrapper">
@@ -197,7 +157,7 @@
 				<div class="card step-card h-100">
 					<div class="card-body">
 						<div class="d-flex align-items-start">
-							<span class="step-number">9</span>
+							<span class="step-number">7</span>
 							<div class="ms-3 flex-grow-1">
 								<h5 class="card-title">Build Vendor Assets</h5>
 								<p class="card-text text-muted">Navigate to the nodejs module directory and run npm to install dependencies and build vendor assets.</p>
@@ -219,7 +179,7 @@
 				<div class="card step-card h-100">
 					<div class="card-body">
 						<div class="d-flex align-items-start">
-							<span class="step-number">10</span>
+							<span class="step-number">8</span>
 							<div class="ms-3 flex-grow-1">
 								<h5 class="card-title">Install PHP Composer Module</h5>
 								<p class="card-text text-muted">Install the PHP Composer module to manage PHP dependencies for your entry module.</p>
@@ -234,20 +194,60 @@
 			</div>
 			
 			<div class="col-12">
-				<div class="card step-card step-card-success h-100">
+				<div class="card step-card h-100">
 					<div class="card-body">
 						<div class="d-flex align-items-start">
-							<span class="step-number step-number-success">11</span>
+							<span class="step-number">9</span>
 							<div class="ms-3 flex-grow-1">
-								<h5 class="card-title text-success">Initialize Composer Autoloader</h5>
+								<h5 class="card-title">Initialize Composer Autoloader</h5>
 								<p class="card-text text-muted">Run the initialization script to install the autoloader reference into your entry module's index file.</p>
 								<div class="code-block-wrapper">
 									<pre class="code-block"><code>cd ./module/composer-bang && ./init-entry.sh</code></pre>
 									<button class="copy-btn" title="Copy to clipboard"><span class="material-icons">content_copy</span></button>
 								</div>
+								<div class="alert alert-info mt-3 mb-0">
+									<span class="material-icons align-middle me-1">check_circle</span>
+									This adds the vendor autoloader include to your entry module's <code>public/index.php</code>.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-12">
+				<div class="card step-card h-100">
+					<div class="card-body">
+						<div class="d-flex align-items-start">
+							<span class="step-number">10</span>
+							<div class="ms-3 flex-grow-1">
+								<h5 class="card-title">Build and Run with Docker</h5>
+								<p class="card-text text-muted">Finally, use Docker Compose to build the project and start your development environment.</p>
+								<div class="code-block-wrapper">
+									<pre class="code-block"><code>cd ../../ && docker compose up --build</code></pre>
+									<button class="copy-btn" title="Copy to clipboard"><span class="material-icons">content_copy</span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-12">
+				<div class="card step-card step-card-success h-100">
+					<div class="card-body">
+						<div class="d-flex align-items-start">
+							<span class="step-number step-number-success">11</span>
+							<div class="ms-3 flex-grow-1">
+								<h5 class="card-title text-success">View Your Application</h5>
+								<p class="card-text text-muted">Open your web browser and navigate to your local development server.</p>
+								<div class="code-block-wrapper">
+									<pre class="code-block"><code>http://localhost:8000/</code></pre>
+									<button class="copy-btn" title="Copy to clipboard"><span class="material-icons">content_copy</span></button>
+								</div>
 								<div class="alert alert-success mt-3 mb-0">
 									<span class="material-icons align-middle me-1">check_circle</span>
-									<strong>Groovy!</strong> This adds the vendor autoloader include to your entry module's <code>public/index.php</code>. Your BoomStick development environment is now fully configured!
+									<strong>Groovy!</strong> You should now see the default BoomStick landing page. Your development environment is fully configured!
 								</div>
 							</div>
 						</div>
