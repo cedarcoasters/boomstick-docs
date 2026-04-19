@@ -250,9 +250,9 @@ body {
 }
 
 .hero-logo {
-    height: 150px;
+    height: 250px;
     width: auto;
-    filter: drop-shadow(0 0 20px rgba(220, 20, 60, 0.5));
+    filter: drop-shadow(0 0 30px rgba(220, 20, 60, 0.6));
 }
 
 .footer-logo {
@@ -467,6 +467,10 @@ a:hover {
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 2rem;
+    }
+    
+    .hero-logo {
+        height: 150px;
     }
     
     .step-number {

@@ -4,7 +4,7 @@
 
 <header class="hero-section text-white text-center py-5">
 	<div class="container">
-		<img src="/images/ash-shotgun.svg" alt="BoomStick" class="hero-logo mb-4">
+		<img src="/images/ash-shotgun-hero.svg" alt="BoomStick" class="hero-logo mb-4">
 		<h1 class="display-4 fw-bold mb-3">
 			This. Is. My. <span class="text-warning">BoomStick.</span>
 		</h1>
