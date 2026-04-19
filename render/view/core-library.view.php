@@ -29,6 +29,9 @@
 						<a href="#session" class="list-group-item list-group-item-action">Session</a>
 						<a href="#debug" class="list-group-item list-group-item-action">Debug</a>
 						<a href="#struct" class="list-group-item list-group-item-action">Struct</a>
+						<a href="#cli" class="list-group-item list-group-item-action">CLI</a>
+						<a href="#database" class="list-group-item list-group-item-action">Database</a>
+						<a href="#session-drivers" class="list-group-item list-group-item-action">Session Drivers</a>
 					</div>
 				</div>
 			</div>
@@ -573,6 +576,321 @@ echo $config->missing;      // Throws ErrorException!</code></pre>
 				<div class="alert alert-info">
 					<span class="material-icons align-middle me-1">info</span>
 					<strong>Tip:</strong> Use <code>Struct</code> as a base class for configuration objects, DTOs, or any class where you want strict property enforcement.
+				</div>
+			</section>
+			
+			<section id="cli" class="mb-5">
+				<h2 class="section-title mb-4">
+					<span class="material-icons align-middle me-2 text-primary">terminal</span>
+					CLI
+				</h2>
+				<p class="text-muted mb-4">The <code>CLI</code> library provides tools for building command-line scripts with argument parsing, flags, options, and colorized output.</p>
+				
+				<div class="card mb-4">
+					<div class="card-header bg-dark text-white">
+						<span class="material-icons align-middle me-1">folder</span>
+						lib/cli/
+					</div>
+					<div class="card-body">
+						<pre class="code-block mb-0"><code class="language-plaintext">lib/cli/
+├── CLI.class.php       # Main CLI handler
+├── Argument.class.php  # Base argument class
+├── Flag.class.php      # Boolean flag arguments
+├── Option.class.php    # Value-based options
+└── Message.class.php   # Output messaging</code></pre>
+					</div>
+				</div>
+				
+				<h5>CLI Class</h5>
+				<div class="card mb-4">
+					<div class="card-header bg-dark text-white">
+						<span class="material-icons align-middle me-1">description</span>
+						lib/cli/CLI.class.php
+					</div>
+					<div class="card-body">
+						<pre class="code-block mb-0"><code class="language-php">namespace BoomStick\Lib\CLI;
+
+class CLI extends Struct
+{
+    public function __construct($argc, $argv);
+    public function init();
+    
+    // Add arguments
+    public function addFlag(Flag $flag);
+    public function addOption(Option $opt);
+    
+    // Access parsed values
+    public function __get($name);
+    public function __set($name, $value);
+    
+    // Output methods
+    public function verbose($message, $runAtLevel = 1, $addNewLine = true);
+    public function error($message, $addNewLine = true);
+    public function prompt($text = null);
+    public function NL($count = 1);
+    public function TAB($count = 1);
+    
+    // Help & utilities
+    public function getHelp();
+    public function getScriptName();
+    public function getVerboseLog($delimiter = "\n");
+    
+    // Colorized output
+    public static function colorize($text, $foreground = 'default', $background = null, $effect = null);
+    public static function resetColor();
+}</code></pre>
+					</div>
+				</div>
+				
+				<h5>Flag & Option Classes</h5>
+				<div class="card mb-4">
+					<div class="card-body">
+						<pre class="code-block mb-0"><code class="language-php">// Flag - Boolean switches (--verbose, -v)
+class Flag extends Argument
+{
+    public $long;        // e.g., 'verbose'
+    public $short;       // e.g., 'v'
+    public $description; // Help text
+}
+
+// Option - Value arguments (--output=file.txt, -o file.txt)
+class Option extends Argument
+{
+    public $long;        // e.g., 'output'
+    public $short;       // e.g., 'o'
+    public $description; // Help text
+    public $required = false;
+    public $default = null;
+}</code></pre>
+					</div>
+				</div>
+				
+				<h5>Complete CLI Script Example</h5>
+				<div class="card mb-4">
+					<div class="card-body">
+						<pre class="code-block mb-0"><code class="language-php">#!/usr/bin/env php
+&lt;?php
+require_once 'vendor/autoload.php';
+
+use BoomStick\Lib\CLI\CLI;
+use BoomStick\Lib\CLI\Flag;
+use BoomStick\Lib\CLI\Option;
+
+$cli = new CLI($argc, $argv);
+
+// Add a flag (boolean)
+$dryRun = new Flag();
+$dryRun->long = 'dry-run';
+$dryRun->short = 'd';
+$dryRun->description = 'Run without making changes';
+$cli->addFlag($dryRun);
+
+// Add a required option
+$inputFile = new Option();
+$inputFile->long = 'input';
+$inputFile->short = 'i';
+$inputFile->description = 'Input file path';
+$inputFile->required = true;
+$cli->addOption($inputFile);
+
+// Add optional option with default
+$outputDir = new Option();
+$outputDir->long = 'output-dir';
+$outputDir->short = 'o';
+$outputDir->description = 'Output directory';
+$outputDir->default = './output';
+$cli->addOption($outputDir);
+
+// Initialize (parses arguments, shows help if --help)
+$cli->init();
+
+// Access values (camelCase from kebab-case)
+if ($cli->dryRun) {
+    $cli->verbose('Dry run mode enabled', 1);
+}
+
+$cli->verbose('Processing: ' . $cli->input, 1);
+$cli->verbose('Output to: ' . $cli->outputDir, 1);
+
+// Colorized output
+$cli->verbose(CLI::colorize('Success!', 'green'), 0);
+$cli->error('Something went wrong'); // Red output to STDERR</code></pre>
+					</div>
+				</div>
+				
+				<h5>Available Colors</h5>
+				<div class="table-responsive mb-4">
+					<table class="table table-bordered">
+						<thead class="table-dark">
+							<tr>
+								<th>Foreground</th>
+								<th>Background</th>
+								<th>Effects</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>black</code>, <code>red</code>, <code>green</code>, <code>yellow</code></td>
+								<td><code>black</code>, <code>red</code>, <code>green</code>, <code>yellow</code></td>
+								<td><code>bright</code>, <code>dim</code></td>
+							</tr>
+							<tr>
+								<td><code>blue</code>, <code>magenta</code>, <code>cyan</code>, <code>white</code></td>
+								<td><code>blue</code>, <code>magenta</code>, <code>cyan</code>, <code>white</code></td>
+								<td><code>underline</code>, <code>blink</code>, <code>reverse</code>, <code>hidden</code></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+			
+			<section id="database" class="mb-5">
+				<h2 class="section-title mb-4">
+					<span class="material-icons align-middle me-2 text-primary">storage</span>
+					Database
+				</h2>
+				<p class="text-muted mb-4">The database libraries provide PDO-based database connectivity with table, row, and list abstractions.</p>
+				
+				<div class="card mb-4">
+					<div class="card-header bg-dark text-white">
+						<span class="material-icons align-middle me-1">folder</span>
+						lib/data/db/
+					</div>
+					<div class="card-body">
+						<pre class="code-block mb-0"><code class="language-plaintext">lib/data/db/
+├── Connect.class.php  # Database connection manager
+├── Table.class.php    # Table configuration
+├── Row.class.php      # Single row operations
+└── Lyst.class.php     # List/collection operations</code></pre>
+					</div>
+				</div>
+				
+				<h5>Connect Class</h5>
+				<div class="card mb-4">
+					<div class="card-header bg-dark text-white">
+						<span class="material-icons align-middle me-1">description</span>
+						lib/data/db/Connect.class.php
+					</div>
+					<div class="card-body">
+						<pre class="code-block mb-0"><code class="language-php">namespace BoomStick\Lib\Data\Db;
+
+class Connect
+{
+    public $pdo;  // PDO instance
+    
+    public function __construct($dsn, $username, $password);
+    
+    // Factory methods
+    public function initTable();
+    public function initLyst($tableConfig = null);
+    public function initRow($tableConfig = null);
+}</code></pre>
+					</div>
+				</div>
+				
+				<h5>Usage Example</h5>
+				<div class="card mb-4">
+					<div class="card-body">
+						<pre class="code-block mb-0"><code class="language-php">use BoomStick\Lib\Data\Db\Connect;
+
+// Create connection
+$db = new Connect(
+    'mysql:host=localhost;dbname=myapp',
+    'username',
+    'password'
+);
+
+// Direct PDO access
+$stmt = $db->pdo->prepare('SELECT * FROM users WHERE id = ?');
+$stmt->execute([123]);
+$user = $stmt->fetch();
+
+// Using Row abstraction
+$userRow = $db->initRow($usersTableConfig);
+$userRow->load(123);
+$userRow->name = 'Updated Name';
+$userRow->save();
+
+// Using Lyst for collections
+$userList = $db->initLyst($usersTableConfig);
+$users = $userList->where('active', '=', 1)->fetch();</code></pre>
+					</div>
+				</div>
+				
+				<div class="alert alert-info">
+					<span class="material-icons align-middle me-1">info</span>
+					<strong>PDO Configuration:</strong> The Connect class automatically sets <code>ERRMODE_EXCEPTION</code>, <code>FETCH_ASSOC</code>, and UTF-8 encoding.
+				</div>
+			</section>
+			
+			<section id="session-drivers" class="mb-5">
+				<h2 class="section-title mb-4">
+					<span class="material-icons align-middle me-2 text-primary">dns</span>
+					Session Drivers
+				</h2>
+				<p class="text-muted mb-4">Session drivers implement different storage backends for the Session class.</p>
+				
+				<div class="card mb-4">
+					<div class="card-header bg-dark text-white">
+						<span class="material-icons align-middle me-1">folder</span>
+						lib/session/
+					</div>
+					<div class="card-body">
+						<pre class="code-block mb-0"><code class="language-plaintext">lib/session/
+└── LocalPHP.class.php  # PHP native session handler</code></pre>
+					</div>
+				</div>
+				
+				<h5>LocalPHP Driver</h5>
+				<div class="card mb-4">
+					<div class="card-header bg-dark text-white">
+						<span class="material-icons align-middle me-1">description</span>
+						lib/session/LocalPHP.class.php
+					</div>
+					<div class="card-body">
+						<pre class="code-block mb-0"><code class="language-php">namespace BoomStick\Lib\Session;
+
+class LocalPHP
+{
+    public function __construct($name, $lifetime);
+    
+    // Session data access
+    public function __get($key);
+    public function __set($key, $value);
+    public function __isset($key);
+    public function all();
+    
+    // Tokens
+    public function URLToken();   // Returns: session_name=session_id
+    public function CSRFToken();  // Returns: session_id
+    
+    // Status & persistence
+    public function status();     // ACTIVE, NONE, or DISABLED
+    public function save();
+}</code></pre>
+					</div>
+				</div>
+				
+				<h5>Session Configuration</h5>
+				<div class="card mb-4">
+					<div class="card-body">
+						<pre class="code-block mb-0"><code class="language-php">// In your module's public/index.php:
+define('SESSION_ENABLED', true);
+define('SESSION_TYPE', 'local');  // Uses LocalPHP driver
+
+// The Session class automatically selects the driver:
+// 'local' => BoomStick\Lib\Session\LocalPHP
+
+// Cookie settings configured automatically:
+// - HttpOnly: true (prevents XSS access)
+// - Path: '/'
+// - Domain: extracted from HTTP_HOST</code></pre>
+					</div>
+				</div>
+				
+				<div class="alert alert-info">
+					<span class="material-icons align-middle me-1">info</span>
+					<strong>Extending Sessions:</strong> Create custom drivers by implementing the same interface as LocalPHP and adding a case to the Session class switch statement.
 				</div>
 			</section>
 			
