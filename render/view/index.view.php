@@ -29,6 +29,23 @@
 			</div>
 		</div>
 		
+		<div class="row mb-4">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header bg-dark text-white">
+						<span class="material-icons align-middle me-1">checklist</span> Prerequisites
+					</div>
+					<div class="card-body">
+						<ul class="mb-0">
+							<li><strong>Docker</strong> is installed and you have a general understanding of how to use it.</li>
+							<li>You are using <strong>Linux</strong> (these instructions are Debian/Ubuntu based).</li>
+							<li class="text-muted">This should work under any OS, but the specifics of the process are only documented for Linux <em>(...for now)</em>.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<div class="row g-4">
 			<div class="col-12">
 				<div class="card step-card h-100">
