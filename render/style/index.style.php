@@ -252,7 +252,7 @@ body {
 .hero-logo {
     height: 150px;
     width: auto;
-    filter: brightness(0) invert(1) drop-shadow(0 0 20px rgba(220, 20, 60, 0.5));
+    filter: drop-shadow(0 0 20px rgba(220, 20, 60, 0.5));
 }
 
 .footer-logo {
