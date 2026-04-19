@@ -8,7 +8,8 @@
 		<h1 class="display-4 fw-bold mb-3">
 			This. Is. My. <span class="text-warning">BoomStick.</span>
 		</h1>
-		<p class="lead mb-4">A lightweight PHP MVC framework for rapid web application development</p>
+		<p class="lead mb-4">A lean PHP MVC framework built for <strong>AI-assisted development</strong></p>
+		<p class="mb-4">For seasoned engineers who need to develop <strong>FAST</strong> with AI tools.</p>
 		<p class="tagline mb-4"><em>"Alright you primitive screwheads, listen up!"</em></p>
 		<a href="#getting-started" class="btn btn-light btn-lg">
 			<span class="material-icons align-middle me-1">play_arrow</span> Get Started
@@ -37,9 +38,10 @@
 					</div>
 					<div class="card-body">
 						<ul class="mb-0">
-							<li><strong>Docker</strong> is installed and you have a general understanding of how to use it.</li>
-							<li>You are using <strong>Linux</strong> (these instructions are Debian/Ubuntu based).</li>
-							<li class="text-muted">This should work under any OS, but the specifics of the process are only documented for Linux <em>(...for now)</em>.</li>
+							<li><strong>Docker</strong> is installed and you have a general understanding of how to use it</li>
+							<li><strong>NodeJS/NPM</strong> is installed at a moderately current version</li>
+							<li>You are using <strong>Linux</strong> (these instructions are Debian/Ubuntu based)</li>
+							<li class="text-muted">This should work under any OS, but the specifics of the process are only documented for Linux <em>(...for now)</em></li>
 						</ul>
 					</div>
 				</div>

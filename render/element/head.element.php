@@ -1,20 +1,20 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?=isset($pageTitle) ? $pageTitle . ' - ' : '';?>BoomStick Documentation</title>
-	<meta name="description" content="<?=isset($pageDescription) ? $pageDescription : 'BoomStick - A lightweight PHP MVC framework for rapid web application development. This is my boomstick!';?>">
+	<meta name="description" content="<?=isset($pageDescription) ? $pageDescription : 'BoomStick - A lean PHP MVC framework built for AI-assisted development. For seasoned engineers who develop FAST.';?>">
 	
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://primitivescrewheads.dev<?=isset($pagePath) ? $pagePath : '/';?>">
 	<meta property="og:title" content="<?=isset($pageTitle) ? $pageTitle . ' - ' : '';?>BoomStick Documentation">
-	<meta property="og:description" content="<?=isset($pageDescription) ? $pageDescription : 'BoomStick - A lightweight PHP MVC framework for rapid web application development. This is my boomstick!';?>">
+	<meta property="og:description" content="<?=isset($pageDescription) ? $pageDescription : 'BoomStick - A lean PHP MVC framework built for AI-assisted development. For seasoned engineers who develop FAST.';?>">
 	<meta property="og:image" content="https://primitivescrewheads.dev/images/ash-shotgun.svg">
 	<meta property="og:site_name" content="BoomStick Framework">
 	
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="<?=isset($pageTitle) ? $pageTitle . ' - ' : '';?>BoomStick Documentation">
-	<meta name="twitter:description" content="<?=isset($pageDescription) ? $pageDescription : 'BoomStick - A lightweight PHP MVC framework for rapid web application development. This is my boomstick!';?>">
+	<meta name="twitter:description" content="<?=isset($pageDescription) ? $pageDescription : 'BoomStick - A lean PHP MVC framework built for AI-assisted development. For seasoned engineers who develop FAST.';?>">
 	<meta name="twitter:image" content="https://primitivescrewheads.dev/images/ash-shotgun.svg">
 
 

@@ -11,7 +11,7 @@ class EntryDocs extends Controller
 	{
 		$this->currentPage = 'index';
 		$this->pageTitle = 'Getting Started';
-		$this->pageDescription = 'Get started with BoomStick PHP MVC framework. Step-by-step setup guide for rapid web application development. Alright you primitive screwheads, listen up!';
+		$this->pageDescription = 'Get started with BoomStick - a lean PHP MVC framework built for AI-assisted development. For seasoned engineers who need to develop FAST with AI tools.';
 		$this->pagePath = '/';
 		$this->bodyView = 'index';
 		$this->render();
