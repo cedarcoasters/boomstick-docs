@@ -464,29 +464,251 @@ a:hover {
     background-color: var(--deadite-green) !important;
 }
 
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2rem;
+/* Ensure proper box sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Prevent horizontal overflow */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Code blocks should scroll horizontally, not expand container */
+.code-block {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre;
+    word-wrap: normal;
+}
+
+.code-block code {
+    white-space: pre;
+}
+
+/* Card body content containment */
+.card-body {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 991px) {
+    .main-nav .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
     }
     
     .hero-logo {
-        height: 150px;
+        height: 200px;
     }
     
-    .step-number {
-        width: 40px;
-        height: 40px;
-        min-width: 40px;
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+    
+    .hero-section .lead {
         font-size: 1rem;
     }
     
+    .hero-section p {
+        font-size: 0.95rem;
+    }
+    
+    .hero-logo {
+        height: 120px;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .page-header .lead {
+        font-size: 0.95rem;
+    }
+    
+    .section-title {
+        font-size: 1.25rem;
+    }
+    
+    .step-number {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 0.9rem;
+    }
+    
+    .step-card .card-body {
+        padding: 1rem;
+    }
+    
+    .step-card .d-flex {
+        flex-direction: column;
+    }
+    
+    .step-card .ms-3 {
+        margin-left: 0 !important;
+        margin-top: 0.75rem;
+    }
+    
     .code-block {
-        font-size: 0.8rem;
-        padding: 0.75rem 1rem;
+        font-size: 0.75rem;
+        padding: 0.75rem;
+        padding-right: 2.5rem;
+    }
+    
+    .code-block-wrapper {
+        max-width: 100%;
+    }
+    
+    .copy-btn {
+        right: 4px;
+        padding: 2px;
+    }
+    
+    .copy-btn .material-icons {
+        font-size: 16px;
+    }
+    
+    .alert {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+    
+    .card {
+        border-radius: 8px;
+    }
+    
+    .card-header {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .card-body {
+        padding: 0.75rem;
     }
     
     .sticky-sidebar {
         position: static;
+        margin-bottom: 1.5rem;
+    }
+    
+    .feature-icon {
+        font-size: 2rem;
+    }
+    
+    .table {
+        font-size: 0.85rem;
+    }
+    
+    .table td, .table th {
+        padding: 0.5rem;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    
+    footer {
+        padding: 1.5rem 0;
+    }
+    
+    footer p {
+        font-size: 0.9rem;
+    }
+    
+    .footer-quote {
+        font-size: 0.85rem;
+    }
+    
+    /* Fix two-column layout on mobile */
+    .row.mb-4 > .col-md-6 {
+        margin-bottom: 1rem;
+    }
+    
+    /* Navigation mobile fixes */
+    .main-nav .navbar-collapse {
+        background: #0d0505;
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 8px;
+        border: 1px solid #2a1515;
+    }
+    
+    .main-nav .nav-link {
+        padding: 0.75rem 1rem;
+        margin: 0.25rem 0;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-logo {
+        height: 100px;
+    }
+    
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    .code-block {
+        font-size: 0.7rem;
+        padding: 0.5rem;
+        padding-right: 2rem;
+    }
+    
+    .step-number {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 0.85rem;
+    }
+    
+    .brand-logo {
+        height: 30px;
+    }
+    
+    .main-nav .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .main-nav .navbar-brand strong {
+        display: none;
     }
 }
 
