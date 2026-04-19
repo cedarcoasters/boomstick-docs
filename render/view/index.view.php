@@ -30,8 +30,8 @@
 		</div>
 		
 		<div class="row mb-4">
-			<div class="col-12">
-				<div class="card">
+			<div class="col-md-6">
+				<div class="card h-100">
 					<div class="card-header bg-dark text-white">
 						<span class="material-icons align-middle me-1">checklist</span> Prerequisites
 					</div>
@@ -40,6 +40,19 @@
 							<li><strong>Docker</strong> is installed and you have a general understanding of how to use it.</li>
 							<li>You are using <strong>Linux</strong> (these instructions are Debian/Ubuntu based).</li>
 							<li class="text-muted">This should work under any OS, but the specifics of the process are only documented for Linux <em>(...for now)</em>.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card h-100">
+					<div class="card-header bg-dark text-white">
+						<span class="material-icons align-middle me-1">inventory_2</span> What This Provides
+					</div>
+					<div class="card-body">
+						<ul class="mb-0">
+							<li>A complete <strong>Docker installation</strong> including all required services to run a local development environment (nginx, php, nodejs, composer, etc.)</li>
+							<li>Installs the default entry module and gives you a working site that you can hack apart at will <em>(...even if you don't have a chainsaw attached to your arm)</em></li>
 						</ul>
 					</div>
 				</div>
