@@ -68,6 +68,14 @@
 							<div class="ms-3 flex-grow-1">
 								<h5 class="card-title">Clone the Repository</h5>
 								<p class="card-text text-muted">Start by cloning the BoomStick repository to your local machine.</p>
+								<div class="alert alert-info mb-3">
+									<span class="material-icons align-middle me-1">info</span>
+									<strong>Choose your module name.</strong> "<code>bang</code>" is used here, so replace "<code>bang</code>" with whatever you choose as your module name.
+								</div>
+								<div class="alert alert-warning mb-3">
+									<span class="material-icons align-middle me-1">warning</span>
+									<strong>NOTE:</strong> You MUST change the module name for ALL commands below where "<code>bang</code>" is used.
+								</div>
 								<div class="code-block-wrapper">
 									<pre class="code-block"><code>git clone https://github.com/cedarcoasters/boomstick.git BoomStick-bang</code></pre>
 									<button class="copy-btn" title="Copy to clipboard"><span class="material-icons">content_copy</span></button>
