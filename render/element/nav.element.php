@@ -11,7 +11,12 @@
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
 					<a class="nav-link <?=$currentPage === 'index' ? 'active' : '';?>" href="/">
-						<span class="material-icons align-middle me-1">home</span> Getting Started
+						<span class="material-icons align-middle me-1">home</span> Home
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link <?=$currentPage === 'getting-started' ? 'active' : '';?>" href="/getting-started">
+						<span class="material-icons align-middle me-1">flag</span> Getting Started
 					</a>
 				</li>
 				<li class="nav-item">

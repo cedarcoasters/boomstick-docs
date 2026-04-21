@@ -17,6 +17,8 @@ $route->register('EntryDocs/notFound' ,'/not-found');
 
 $route->register('EntryDocs/index' ,'/');
 
+$route->register('EntryDocs/gettingStarted' ,'/getting-started');
+
 $route->register('EntryDocs/entryModule' ,'/entry-module');
 
 $route->register('EntryDocs/coreLibrary' ,'/core-library');

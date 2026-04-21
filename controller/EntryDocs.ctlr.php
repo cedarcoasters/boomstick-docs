@@ -10,10 +10,20 @@ class EntryDocs extends Controller
 	public function index()
 	{
 		$this->currentPage = 'index';
-		$this->pageTitle = 'Getting Started';
-		$this->pageDescription = 'Get started with BoomStick - a lean PHP MVC framework built for AI-assisted development. For seasoned engineers who need to develop FAST with AI tools.';
+		$this->pageTitle = 'Home';
+		$this->pageDescription = 'BoomStick - a lean PHP MVC framework built for AI-assisted development. For seasoned engineers who need to develop FAST with AI tools.';
 		$this->pagePath = '/';
 		$this->bodyView = 'index';
+		$this->render();
+	}
+
+	public function gettingStarted()
+	{
+		$this->currentPage = 'getting-started';
+		$this->pageTitle = 'Getting Started';
+		$this->pageDescription = 'Step-by-step guide to set up your BoomStick development environment with Docker, PHP, and all required tools.';
+		$this->pagePath = '/getting-started';
+		$this->bodyView = 'getting-started';
 		$this->render();
 	}
 
