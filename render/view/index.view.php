@@ -164,17 +164,30 @@
 					<span class="material-icons align-middle me-2 text-primary">flash_on</span>
 					TL;DR — <em>"Gimme some sugar, baby"</em>
 				</h2>
-				<p class="text-muted mb-4">Too long, didn't read? We get it. You've got Deadites to slay and code to ship. Just copy this one-liner and you're off to the races. <strong>Replace <code>bang</code> with your module name.</strong></p>
+				<p class="text-muted mb-4">Too long, didn't read? We get it. You've got Deadites to slay and code to ship. Set your module name and run the one-liner below.</p>
+			</div>
+		</div>
+		
+		<div class="card mb-3">
+			<div class="card-header bg-dark text-white">
+				<span class="material-icons align-middle me-1">edit</span> Step 1: Set Your Module Name
+			</div>
+			<div class="card-body">
+				<p class="mb-3">First, export your module name as a variable. Replace <code>bang</code> with whatever you want to call your module:</p>
+				<div class="code-block-wrapper">
+					<pre class="code-block"><code>export module="bang"</code></pre>
+					<button class="copy-btn" title="Copy to clipboard"><span class="material-icons">content_copy</span></button>
+				</div>
 			</div>
 		</div>
 		
 		<div class="card">
 			<div class="card-header bg-dark text-white">
-				<span class="material-icons align-middle me-1">terminal</span> One Command to Rule Them All
+				<span class="material-icons align-middle me-1">terminal</span> Step 2: Run This One-Liner
 			</div>
 			<div class="card-body">
 				<div class="code-block-wrapper">
-					<pre class="code-block"><code>git clone https://github.com/cedarcoasters/boomstick.git BoomStick-bang && cd BoomStick-bang && ./bin/make-module -m bang && cd module/entry-bang && ./entry-init.sh && cd ../../ && ./bin/make-module -t nodejs --entry-point-module=bang -m bang && cd ./module/nodejs-bang/ && npm install && npm run all && cd ../../ && ./bin/make-module -t composer --entry-point-module=bang -m bang && cd ./module/composer-bang && ./init-entry.sh && cd ../../ && docker compose up --build</code></pre>
+					<pre class="code-block"><code>git clone https://github.com/cedarcoasters/boomstick.git BoomStick-$module && cd BoomStick-$module && ./bin/make-module -m $module && cd module/entry-$module && ./entry-init.sh && cd ../../ && ./bin/make-module -t nodejs --entry-point-module=$module -m $module && cd ./module/nodejs-$module/ && npm install && npm run all && cd ../../ && ./bin/make-module -t composer --entry-point-module=$module -m $module && cd ./module/composer-$module && ./init-entry.sh && cd ../../ && docker compose up --build</code></pre>
 					<button class="copy-btn" title="Copy to clipboard"><span class="material-icons">content_copy</span></button>
 				</div>
 				<div class="alert alert-success mt-3 mb-0">
