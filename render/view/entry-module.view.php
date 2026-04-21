@@ -21,9 +21,14 @@
 		</h2>
 		<p class="text-muted mb-4">The entry module is the main entry point for your BoomStick application. It follows the MVC (Model-View-Controller) pattern and provides a structured way to build web applications. This guide uses <code>module/entry-docs</code> as a reference implementation.</p>
 		
+		<div class="alert alert-info mb-4">
+			<span class="material-icons align-middle me-1">info</span>
+			<strong>Note:</strong> After creating an entry module with <code>./bin/make-module -m [name]</code>, initialize it by running <code>cd module/entry-[name] && ./entry-init.sh</code> to generate the NginX configuration.
+		</div>
+		
 		<div class="card">
-			<div class="card-body">
-				<pre class="code-block mb-0"><code class="language-plaintext">module/entry-bang/
+<div class="card-body">
+    							<pre class="code-block mb-0"><code class="language-plaintext">module/entry-bang/
 ├── controller/             # Request handlers
 │   └── EntryBang.ctlr.php
 ├── lib/                    # Module-specific classes
@@ -40,8 +45,9 @@
 │   └── view/               # Page templates
 ├── route/                  # URL routing
 │   └── EntryBang.route.php
+├── entry-init.sh           # Module initialization script
 └── version.php</code></pre>
-			</div>
+						</div>
 		</div>
 	</section>
 	

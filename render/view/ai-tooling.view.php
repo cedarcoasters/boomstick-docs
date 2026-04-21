@@ -408,11 +408,17 @@ D::timer('id');               // Start/stop timer</code></pre>
 				
 				<div class="card mb-4">
 					<div class="card-body">
-						<pre class="code-block mb-0"><code class="language-bash"># Module Generator
-./bin/make-module --help                    # Show help
-./bin/make-module -m [name]                 # Create entry module
-./bin/make-module -t nodejs -m [name]       # Create nodejs module
-./bin/make-module -t composer -m [name]     # Create composer module
+						<pre class="code-block mb-0"><code class="language-bash"># Set module name variable (replace "bang" with your module name)
+export module="bang"
+
+# Module Generator
+./bin/make-module --help                                    # Show help
+./bin/make-module -m $module                                # Create entry module
+./bin/make-module -t nodejs --entry-point-module=$module -m $module   # Create nodejs module
+./bin/make-module -t composer --entry-point-module=$module -m $module # Create composer module
+
+# Entry Module Initialization (creates NginX config)
+cd module/entry-$module && ./entry-init.sh && cd ../../
 
 # Common options
 --entry-point-module=[name]   # Link to entry module (for nodejs/composer)
@@ -423,8 +429,20 @@ docker compose down           # Stop containers
 docker compose logs -f        # Follow logs
 
 # NPM (from nodejs module directory)
+cd ./module/nodejs-$module/
 npm install                   # Install dependencies
-npm run all                   # Build all vendor assets</code></pre>
+npm run all                   # Build all vendor assets
+
+# Composer initialization
+cd ./module/composer-$module && ./init-entry.sh   # Install autoloader into entry module</code></pre>
+					</div>
+				</div>
+				
+				<h5>Quick Setup One-Liner</h5>
+				<div class="card mb-4">
+					<div class="card-body">
+						<p class="mb-3">Set your module name and run this single command:</p>
+						<pre class="code-block mb-0"><code class="language-bash">export module="bang" && git clone https://github.com/cedarcoasters/boomstick.git BoomStick-$module && cd BoomStick-$module && ./bin/make-module -m $module && cd module/entry-$module && ./entry-init.sh && cd ../../ && ./bin/make-module -t nodejs --entry-point-module=$module -m $module && cd ./module/nodejs-$module/ && npm install && npm run all && cd ../../ && ./bin/make-module -t composer --entry-point-module=$module -m $module && cd ./module/composer-$module && ./init-entry.sh && cd ../../ && docker compose up --build</code></pre>
 					</div>
 				</div>
 			</section>
